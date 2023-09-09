@@ -18,20 +18,17 @@ function Filter({ onFilter, addNewMovie, movies }) {
   };
 
   const handleRatingChange = (nextValue) => {
-    // Toggle the star rating.
     const newRating = ratingFilter === nextValue ? 0 : nextValue;
     setRatingFilter(newRating);
     onFilter({ title: titleFilter, rating: newRating });
   };
+
   const handleAddMovie = () => {
     if (isAddingMovie) {
-      // Add the new movie to the addedMovies array
-     
       addNewMovie(newMovie);
       setNewMovie({ title: '', description: '', rating: 0, imageUrl: '' });
     }
     setIsAddingMovie(!isAddingMovie);
-     // Toggle isAddingMovie
   };
 
   const handleCancel = () => {
@@ -67,9 +64,7 @@ function Filter({ onFilter, addNewMovie, movies }) {
           </div>
         </div>
       </div>
-
       {isAddingMovie ? (
-        // Render the movie input form with all four input fields
         <div>
           <h3>Add Movie</h3>
           <input
@@ -112,7 +107,6 @@ function Filter({ onFilter, addNewMovie, movies }) {
           </button>
         </div>
       ) : (
-        // Render the "Add Movie" toggle button
         <button className="btn btn-danger" onClick={handleAddMovie}>
           Add Movie
         </button>

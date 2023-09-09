@@ -37,9 +37,8 @@ function App() {
     },
   ]);
 
-  
   const [movies, setMovies] = useState(initialMovies);
-  const [filteredMovies, setFilteredMovies] = useState(initialMovies); // New state for filtered movies
+  const [filteredMovies, setFilteredMovies] = useState(initialMovies);
 
   const filterMovies = ({ title, rating }) => {
     const filteredMovies = movies.filter((movie) => {
@@ -48,18 +47,27 @@ function App() {
         (rating === 0 || movie.rating === rating)
       );
     });
-    setFilteredMovies(filteredMovies); // Update filtered movies state
+    setFilteredMovies(filteredMovies);
   };
 
   const addMovie = (newMovie) => {
     const updatedMovies = [...movies, { ...newMovie, id: uuidv4() }];
     setMovies(updatedMovies);
-    setFilteredMovies(updatedMovies); // Update filtered movies with new movie
+    setFilteredMovies(updatedMovies);
   };
 
-  const handleRemoveMovie = (updatedMovies) => {
+  const editMovie = (editedMovie) => {
+    const updatedMovies = movies.map((movie) =>
+      movie.id === editedMovie.id ? { ...editedMovie } : movie
+    );
     setMovies(updatedMovies);
-    setFilteredMovies(updatedMovies); // Update filtered movies when a movie is removed
+    setFilteredMovies(updatedMovies);
+  };
+
+  const removeMovie = (id) => {
+    const updatedMovies = movies.filter((movie) => movie.id !== id);
+    setMovies(updatedMovies);
+    setFilteredMovies(updatedMovies);
   };
 
   return (
@@ -72,10 +80,13 @@ function App() {
         </Container>
       </Navbar>
       <Filter onFilter={filterMovies} addNewMovie={addMovie} />
-      <MovieList movies={filteredMovies} onRemove={handleRemoveMovie} />
+      <MovieList
+        movies={filteredMovies}
+        onRemove={removeMovie}
+        onEdit={editMovie}
+      />
     </div>
   );
 }
 
 export default App;
-

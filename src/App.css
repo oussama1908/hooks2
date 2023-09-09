@@ -124,3 +124,8 @@ div.flexb {
   flex-wrap: wrap;
   justify-content:center; /* Adjust this property as needed for spacing */
 }
+
+.editstyle{
+  width:35px;
+  margin-bottom: 10px;
+}
