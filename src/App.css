@@ -1,0 +1,145 @@
+
+body {
+  background-color: black;
+}
+.sizetext {
+  font-size: 30px; 
+}
+
+h2{
+  font-size: 25px;
+  color: aliceblue;
+  margin-top: 30px;
+  display: flex;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap:200px;
+  width: 800px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+}
+
+.flex {
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #e9f568;
+}
+.off {
+  color: #ccc;
+}
+
+.star-container {
+  display: flex;
+  flex-direction: row;
+}
+
+h3{
+  font-size: 20px;
+  color: aliceblue;
+  align-items: center;
+  justify-content: center;
+}
+.flexo {
+  width:300px;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+}
+div.flexb {
+  width: 500px;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+ 
+
+}
+
+.moviecard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cardtext{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.react-star-rating.star-rating {
+  color: red; 
+}
+
+.cardtexto{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.poor{
+  color:white;
+  font-size : 18px ;
+  margin-top: 5px;
+}
+.mine{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:20px;
+  font-size: 25px;
+}
+
+.card {
+  width: 18rem;
+  margin: 10px;
+}
+
+/* Add these styles to your CSS file (e.g., App.css) */
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center; /* Adjust this property as needed for spacing */
+}
+
+.editstyle{
+  width:35px;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+  color: rgb(194, 193, 188); /* Set the star color */
+}
+
+.star {
+  cursor: pointer;
+}
+
+.star.filled {
+  color: rgb(236, 76, 76); /* Set the filled star color */
+}
